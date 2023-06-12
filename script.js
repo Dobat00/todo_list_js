@@ -9,15 +9,17 @@ teste.addEventListener('click', function(){
 })
 
 add.addEventListener('click', render)//{
-add.addEventListener('keydown', render)
-    // let element = input.value
-    // lista.push(element);
-    // console.log(lista)
-    // input.value =''
-    // render();
-// })
 
-function render(){
+input.addEventListener('keydown', function(e){
+    if(e.code === "Enter"){
+        add.click();
+    }
+})
+
+function render(e){
+    if (e.key === 'Enter'){
+        add.click();
+    }
     let element = input.value
     lista.push(element);
     console.log(lista)
